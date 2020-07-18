@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Questions</title>
+    <h:outputStylesheet library="css" name="bootstrap/bootstrap.min.css" />
+</h:head>
+<h:body>
+    <div class="text-center text-primary">
+        <h2>Questions</h2>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table table-hover">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Title:</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <ui:repeat value="#{questionManager.getAll()}" var="question">
+                    <tr>
+                        <td style="width: 80%">
+                            #{question.title}
+                        </td>
+                        <td style="width: 20%">
+                            <h:form>
+                                <h:commandButton value="Checkout"
+                                                 action="#{questionManager.checkoutQuestion(question.getId())}"
+                                                 styleClass="btn btn-primary" />
+                            </h:form>
+                        </td>
+                    </tr>
+                </ui:repeat>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</h:body>
+</html>

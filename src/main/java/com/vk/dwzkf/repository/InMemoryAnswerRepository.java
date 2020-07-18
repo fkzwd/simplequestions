@@ -1,0 +1,57 @@
+package com.vk.dwzkf.repository;
+
+import com.vk.dwzkf.model.Answer;
+import com.vk.dwzkf.model.Question;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class InMemoryAnswerRepository implements AnswerRepository{
+    private List<Answer> answers;
+    private AtomicInteger idValue = new AtomicInteger();
+
+    public InMemoryAnswerRepository() {
+        answers = new ArrayList<>();
+        answers.addAll(Arrays.asList(
+                new Answer(idValue.incrementAndGet(),1,"Answer 1"),
+                new Answer(idValue.incrementAndGet(),1, "Answer 2"),
+                new Answer(idValue.incrementAndGet(),1,"Answer 3"),
+                new Answer(idValue.incrementAndGet(),2, "Answer 1"),
+                new Answer(idValue.incrementAndGet(),2, "Answer 2"),
+                new Answer(idValue.incrementAndGet(),2, "Answer 3")
+        ));
+    }
+
+    @Override
+    public void save(Answer answer) {
+
+    }
+
+    @Override
+    public Answer get(int id) {
+        return null;
+    }
+
+    @Override
+    public void update(Answer a) {
+
+    }
+
+    @Override
+    public void remove(Answer a) {
+
+    }
+
+    @Override
+    public List<Answer> getAll(int parentId) {
+        List<Answer> answerList = new ArrayList<>();
+        for (Answer a : answers) {
+            if (a.getParentId().compareTo(parentId) == 0) {
+                answerList.add(a);
+            }
+        }
+        return answerList;
+    }
+}

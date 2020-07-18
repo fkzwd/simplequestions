@@ -1,31 +1,23 @@
 package com.vk.dwzkf.model;
 
-public class Answer {
-    private Integer parentId;
+public class Question {
     private Integer id;
+    private String title;
     private String text;
 
-    public Answer() {
+    public Question(){
 
     }
 
-    public Answer(int id, int parentId, String text) {
-        this.parentId = parentId;
+    public Question(int id, String title, String text) {
         this.id = id;
+        this.title = title;
         this.text = text;
     }
 
-    public Answer(int parentId, String text) {
-        this.parentId = parentId;
+    public Question(String title, String text) {
+        this.title = title;
         this.text = text;
-    }
-
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
     }
 
     public Integer getId() {
@@ -34,6 +26,14 @@ public class Answer {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getText() {

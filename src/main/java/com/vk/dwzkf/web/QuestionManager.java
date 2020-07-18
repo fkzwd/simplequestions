@@ -1,0 +1,34 @@
+package com.vk.dwzkf.web;
+
+import com.vk.dwzkf.model.Question;
+import com.vk.dwzkf.repository.InMemQuestionRepository;
+import com.vk.dwzkf.repository.QuestionRepository;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import java.util.List;
+import java.util.Map;
+
+@ManagedBean
+@SessionScoped
+public class QuestionManager {
+    private QuestionRepository questionRepo = new InMemQuestionRepository();
+
+    public QuestionManager(){
+
+    }
+
+    public List<Question> getAll(){
+        return questionRepo.getAll();
+    }
+
+    public String checkoutQuestion(int id) {
+        Question q = questionRepo.get(id);
+        if (q == null) return "index.xhtml?faces-redirect=true";
+
+        Map<String, Object> reqMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        reqMap.put("question", q);
+        return "answers.xhtml?faces-redirect=true";
+    }
+}
