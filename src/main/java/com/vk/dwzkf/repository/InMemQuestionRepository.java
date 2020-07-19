@@ -15,7 +15,10 @@ public class InMemQuestionRepository implements QuestionRepository{
         questions.addAll(Arrays.asList(
                 new Question(idValue.incrementAndGet(),
                         "Question "+idValue.get(),
-                        "Some description "+idValue.get()),
+                        "Some description asldkasdkaspodkaspodkaspodkas"+
+                                "\r\naoisdjaoisjdoaisdjaosidjaosidjasoidja"+
+                                "\r\nasdiaosidjasiodjasoidjasoidjasoid"+
+                                idValue.get()),
                 new Question(idValue.incrementAndGet(),
                         "Question "+idValue.get(),
                         "Some description "+idValue.get())

@@ -12,22 +12,20 @@
 </h:head>
 
 <h:body>
-    <div class="form-group">
+    <div class="form-group bg-dark">
         <div class="row">
-            <div class="col-3"></div>
+            <div class="col-1"></div>
             <div class="col-6">
                 <div class="row">
-                    <div class="col-3">
-                    </div>
-                    <div class="col-6">
-                        <div class="text-center text-primary">
+                        <div class="col">
+                        <div class="text-left text-primary">
                             <h4>#{question.getTitle()}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="text-left">
+                        <div class="text-left text-light">
                             <h6>#{question.getText()}</h6>
                         </div>
                     </div>
@@ -35,9 +33,6 @@
             </div>
         </div>
     </div>
-    <br/>
-    <hr/>
-    <br/>
     <div class="form-group">
         <div class="row">
             <div class="col-3"></div>
@@ -46,20 +41,16 @@
                     <div class="text-success">
                         <h3>Answers</h3>
                     </div>
-                    <table class="table table-hover rounded border-primary">
-                        <tbody>
-                                <ui:repeat value="#{answerManager.getAll(question.getId())}" var="answer">
-                                    <tr>
-                                        <td>
-                                            <div class="text-left">
-                                                #{answer.text}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </ui:repeat>
-                        </tbody>
-                    </table>
                 </div>
+                    <ui:repeat value="#{answerManager.getAll(question.getId())}" var="answer">
+                        <div class="row">
+                            <div class="col rounded text-left">
+                                <div class="form-group">
+                                <textarea class="form-control bg-light" style="resize: none;" rows="4" cols="50" readonly="readonly">#{answer.text}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </ui:repeat>
             </div>
         </div>
     </div>

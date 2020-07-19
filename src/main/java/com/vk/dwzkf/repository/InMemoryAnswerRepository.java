@@ -15,9 +15,9 @@ public class InMemoryAnswerRepository implements AnswerRepository{
     public InMemoryAnswerRepository() {
         answers = new ArrayList<>();
         answers.addAll(Arrays.asList(
-                new Answer(idValue.incrementAndGet(),1,"Answer 1"),
-                new Answer(idValue.incrementAndGet(),1, "Answer 2"),
-                new Answer(idValue.incrementAndGet(),1,"Answer 3"),
+                new Answer(idValue.incrementAndGet(),1,"Answer 1\r\nblabla\r\nblah blah then blah\r\nand blah"),
+                new Answer(idValue.incrementAndGet(),1, "Answer 2\r\n\r\nasdasd\r\na"),
+                new Answer(idValue.incrementAndGet(),1,"Answer 3\naaaaf\n"),
                 new Answer(idValue.incrementAndGet(),2, "Answer 1"),
                 new Answer(idValue.incrementAndGet(),2, "Answer 2"),
                 new Answer(idValue.incrementAndGet(),2, "Answer 3")
