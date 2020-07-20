@@ -8,8 +8,10 @@
 <h:head>
     <title>Questions</title>
     <h:outputStylesheet library="css" name="bootstrap/bootstrap.min.css" />
+
 </h:head>
 <h:body>
+    <div class="container-fluid">
     <div class="text-center text-primary">
         <h2>Questions</h2>
     </div>
@@ -40,8 +42,14 @@
                 </ui:repeat>
                 </tbody>
             </table>
+            <div class="text-center">
+                <h:form>
+                    <h:commandButton styleClass="btn btn-primary" action="questions" value="New"/>
+                </h:form>
+            </div>
         </div>
         <div class="col-2"></div>
+    </div>
     </div>
 </h:body>
 </html>
