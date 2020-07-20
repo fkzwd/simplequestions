@@ -17,10 +17,12 @@
                 <div class="col">
                     <div class="text-center">
                         <h:outputLabel styleClass="text-white">Title:</h:outputLabel>
-                        <h:inputText styleClass="form-control" value="#{question.title}"/>
+                        <h:inputText styleClass="form-control" value="#{question.title}" required="true">
+                            <f:passThroughAttribute name="placeholder" value="Title..." />
+                        </h:inputText>
                         <h:outputLabel styleClass="text-white">Description:</h:outputLabel>
                         <h:inputTextarea styleClass="form-control" value="#{question.text}" cols="20" rows="4"
-                                         style="resize: none; overflow: auto">
+                                         style="resize: none; overflow: auto" required="true">
                             <f:passThroughAttribute name="placeholder" value="Write here..."/>
                         </h:inputTextarea>
                     </div>
