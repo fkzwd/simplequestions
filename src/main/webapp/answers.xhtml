@@ -57,7 +57,7 @@
            <div class="col text-center">
                <h:form>
                    <h:commandButton style="margin: 3pt" styleClass="btn btn-primary text-right" value="Add answer" action="#{answerManager.newAnswer(question.getId())}"/>
-                   <h:commandButton style="margin: 3pt" styleClass="btn btn-secondary" value="Home" action="questions" />
+                   <h:commandButton style="margin: 3pt" styleClass="btn btn-secondary" value="Home" action="questions?faces-redirect=true" />
                </h:form>
            </div>
            <div class="col-3"></div>

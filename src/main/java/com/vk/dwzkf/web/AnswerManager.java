@@ -33,7 +33,9 @@ public class AnswerManager {
         Question q = (Question) map.get("question");
         if (q.getId().compareTo(parentId)==0) {
             Answer a = (Answer) map.get("answer");
-            answerRepo.save(a);
+            if (!a.getText().isEmpty()) {
+                answerRepo.save(a);
+            }
             return "answers.xhtml?faces-redirect=true";
         }
         return "answers.xhtml?faces-redirect=true";

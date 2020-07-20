@@ -17,12 +17,12 @@
                 <div class="col">
                     <div class="text-center">
                         <h:outputLabel styleClass="text-white">Title:</h:outputLabel>
-                        <h:inputText styleClass="form-control" value="#{question.title}" required="true">
+                        <h:inputText styleClass="form-control" value="#{question.title}">
                             <f:passThroughAttribute name="placeholder" value="Title..." />
                         </h:inputText>
                         <h:outputLabel styleClass="text-white">Description:</h:outputLabel>
                         <h:inputTextarea styleClass="form-control" value="#{question.text}" cols="20" rows="4"
-                                         style="resize: none; overflow: auto" required="true">
+                                         style="resize: none; overflow: auto">
                             <f:passThroughAttribute name="placeholder" value="Write here..."/>
                         </h:inputTextarea>
                     </div>
@@ -33,7 +33,9 @@
                 <div class="col">
                     <div class="text-center">
                         <h:commandButton style="margin: 3pt" styleClass="btn btn-primary" value="Add" action="#{questionManager.createQuestion()}" />
-                        <h:commandButton style="margin: 3pt" styleClass="btn btn-secondary" value="Home" action="questions" />
+                        <h:form style="margin: 3pt" >
+                            <h:commandButton styleClass="btn btn-secondary" value="Home" action="questions?faces-redirect=true" />
+                        </h:form>
                     </div>
                 </div>
             </div>

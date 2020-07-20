@@ -17,7 +17,7 @@
                 <div class="col">
                     <div class="text-center">
                         <h:inputTextarea styleClass="form-control" value="#{answer.text}" cols="20" rows="4"
-                                        style="resize: none; overflow: auto" required="true">
+                                        style="resize: none; overflow: auto">
                             <f:passThroughAttribute name="placeholder" value="Write here..."/>
                         </h:inputTextarea>
                     </div>
@@ -28,7 +28,9 @@
                 <div class="col">
                     <div class="text-center">
                         <h:commandButton style="margin: 3pt" styleClass="btn btn-primary" value="Add" action="#{answerManager.createAnswer(question.getId())}" />
-                        <h:commandButton style="margin: 3pt" styleClass="btn btn-secondary" value="Home" action="#{answerManager.toAnswers()}" />
+                        <h:form style="margin: 3pt">
+                            <h:commandButton styleClass="btn btn-secondary" value="Home" action="#{answerManager.toAnswers()}" />
+                        </h:form>
                     </div>
                 </div>
             </div>
