@@ -32,10 +32,15 @@
                </div>
            </div>
        </div>
+       <div class="row bg-light">
+           <div class="col align-items-center">
+               <div class="text-center text-info">Answers</div>
+           </div>
+       </div>
        <div class="row">
            <div class="col" style="overflow-y: auto">
                <ui:repeat value="#{answerManager.getAll(question.getId())}" var="answer">
-                   <div class="container" style="padding-top: 3pt">
+                   <div class="container" style="padding-top: 3pt; padding-bottom: 2pt">
                        <div class="row">
                            <div class="col-2"></div>
                            <div class="col">
