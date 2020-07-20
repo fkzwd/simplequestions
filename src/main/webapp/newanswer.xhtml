@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Create new answer</title>
+    <h:outputStylesheet library="css" name="bootstrap/bootstrap.min.css" />
+</h:head>
+<h:body styleClass="bg-dark">
+    <h:form styleClass="form-group">
+        <div class="container">
+            <div class="row" style="padding: 5pt" >
+                <div class="col-3"></div>
+                <div class="col">
+                    <div class="text-center">
+                        <h:inputTextarea styleClass="form-control" value="#{answer.text}" cols="20" rows="4"
+                                        style="resize: none; overflow: auto">
+                            <f:passThroughAttribute name="placeholder" value="Write here..."/>
+                        </h:inputTextarea>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row" style="padding: 2pt">
+                <div class="col">
+                    <div class="text-center">
+                        <h:commandButton style="margin: 3pt" styleClass="btn btn-primary" value="Add" action="#{answerManager.createAnswer(question.getId())}" />
+                        <h:commandButton style="margin: 3pt" styleClass="btn btn-secondary" value="Home" action="#{answerManager.toAnswers()}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</h:body>
+</html>

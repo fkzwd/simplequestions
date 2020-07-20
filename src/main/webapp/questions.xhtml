@@ -8,6 +8,7 @@
 <h:head>
     <title>Questions</title>
     <h:outputStylesheet library="css" name="bootstrap/bootstrap.min.css" />
+    <h:outputStylesheet library="css" name="font-awesome/font-awesome.min.css" />
 
 </h:head>
 <h:body>
@@ -33,9 +34,14 @@
                         </td>
                         <td style="width: 20%">
                             <h:form>
-                                <h:commandButton value="Checkout"
+                                <h:commandButton style="margin: 2pt"
+                                                 value="Checkout"
                                                  action="#{questionManager.checkoutQuestion(question.getId())}"
                                                  styleClass="btn btn-primary" />
+                                <button style="margin: 2pt;"
+                                        class="btn btn-danger">
+                                    X
+                                </button>
                             </h:form>
                         </td>
                     </tr>
@@ -44,7 +50,7 @@
             </table>
             <div class="text-center">
                 <h:form>
-                    <h:commandButton styleClass="btn btn-primary" action="questions" value="New"/>
+                    <h:commandButton styleClass="btn btn-primary" action="#{questionManager.newQuestion()}" value="New"/>
                 </h:form>
             </div>
         </div>

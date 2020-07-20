@@ -35,7 +35,10 @@ public class InMemoryAnswerRepository implements AnswerRepository{
 
     @Override
     public void save(Answer answer) {
-
+        if (answer.getId()!=null) return;
+        if (answer.getParentId()==null) return;
+        answer.setId(idValue.incrementAndGet());
+        answers.add(answer);
     }
 
     @Override

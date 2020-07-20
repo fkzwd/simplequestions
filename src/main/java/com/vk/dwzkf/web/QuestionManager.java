@@ -31,4 +31,18 @@ public class QuestionManager {
         reqMap.put("question", q);
         return "answers.xhtml?faces-redirect=true";
     }
+
+    public String newQuestion(){
+        Question q = new Question();
+        Map<String, Object> reqMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        reqMap.put("question", q);
+        return "newquestion.xhtml?faces-redirect=true";
+    }
+
+    public String createQuestion() {
+        Map<String, Object> reqMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        Question q = (Question) reqMap.get("question");
+        questionRepo.save(q);
+        return "questions.xhtml?faces-redirect=true";
+    }
 }
