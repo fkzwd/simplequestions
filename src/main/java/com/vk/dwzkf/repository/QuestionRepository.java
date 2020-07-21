@@ -9,5 +9,5 @@ public interface QuestionRepository {
     Question get(int id);
     void save(Question question);
     void update(Question question);
-    void remove(Question question);
+    void remove(int id);
 }

@@ -47,4 +47,9 @@ public class AnswerManager {
         map.remove("answer");
         return "answers.xhtml?faces-redirect=true";
     }
+
+    public String remove(int id) {
+        answerRepo.remove(id);
+        return "answers.xhtml?faces-redirect=true";
+    }
 }

@@ -38,6 +38,10 @@
                                                  value="Checkout"
                                                  action="#{questionManager.checkoutQuestion(question.getId())}"
                                                  styleClass="btn btn-primary" />
+                                <h:commandButton style="margin: 2pt"
+                                                 value="X"
+                                                 action="#{questionManager.remove(question.getId())}"
+                                                 styleClass="btn btn-danger" />
                             </h:form>
                         </td>
                     </tr>

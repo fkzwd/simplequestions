@@ -76,7 +76,15 @@ public class PostgresQuestionRepository implements QuestionRepository{
     }
 
     @Override
-    public void remove(Question question) {
-
+    public void remove(int id) {
+        String preparedSQL = "DELETE FROM questions where id=?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(preparedSQL);
+            preparedStatement.setInt(1,id);
+            preparedStatement.execute();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

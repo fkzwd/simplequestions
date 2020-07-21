@@ -46,7 +46,11 @@
                            <div class="col">
                                <textarea rows="4" cols="40" readonly="readonly" class="form-control" style="resize: none; overflow: auto">#{answer.getText()}</textarea>
                            </div>
-                           <div class="col-2"></div>
+                           <div class="col-2 align-self-center">
+                               <h:form>
+                                   <h:commandButton styleClass="btn btn-danger" value="X" action="#{answerManager.remove(answer.id)}" />
+                               </h:form>
+                           </div>
                        </div>
                    </div>
                </ui:repeat>

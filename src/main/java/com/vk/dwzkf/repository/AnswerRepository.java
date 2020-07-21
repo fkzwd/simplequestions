@@ -8,6 +8,6 @@ public interface AnswerRepository {
     void save(Answer answer);
     Answer get(int id);
     void update(Answer a);
-    void remove(Answer a);
+    void remove(int id);
     List<Answer> getAll(int parentId);
 }

@@ -8,6 +8,7 @@ import com.vk.dwzkf.repository.QuestionRepository;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import java.sql.PreparedStatement;
 import java.util.List;
 import java.util.Map;
 
@@ -46,6 +47,11 @@ public class QuestionManager {
         if (!q.getTitle().isEmpty() && !q.getText().isEmpty()) {
             questionRepo.save(q);
         }
+        return "questions.xhtml?faces-redirect=true";
+    }
+
+    public String remove(int id) {
+        questionRepo.remove(id);
         return "questions.xhtml?faces-redirect=true";
     }
 }

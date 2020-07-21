@@ -5,6 +5,7 @@ import com.vk.dwzkf.model.Answer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +44,16 @@ public class PostgresAnswerRepository implements AnswerRepository {
     }
 
     @Override
-    public void remove(Answer a) {
+    public void remove(int id) {
+        String preparedSQL = "DELETE FROM answers WHERE id=?;";
+        try {
+            PreparedStatement statement = connection.prepareStatement(preparedSQL);
+            statement.setInt(1, id);
+            statement.execute();
+        }
+        catch (Exception e) {
 
+        }
     }
 
     @Override

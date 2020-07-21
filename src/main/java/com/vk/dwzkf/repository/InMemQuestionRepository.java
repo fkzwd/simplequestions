@@ -54,9 +54,9 @@ public class InMemQuestionRepository implements QuestionRepository{
     }
 
     @Override
-    public void remove(Question question) {
-        Question question1 = get(question.getId());
+    public void remove(int id) {
+        Question question1 = get(id);
         if (question1==null) return;
-        questions.remove(question);
+        questions.remove(question1);
     }
 }

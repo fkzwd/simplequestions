@@ -52,7 +52,7 @@ public class InMemoryAnswerRepository implements AnswerRepository{
     }
 
     @Override
-    public void remove(Answer a) {
+    public void remove(int id) {
 
     }
 
