@@ -2,6 +2,7 @@ package com.vk.dwzkf.web;
 
 import com.vk.dwzkf.model.Question;
 import com.vk.dwzkf.repository.InMemQuestionRepository;
+import com.vk.dwzkf.repository.PostgresQuestionRepository;
 import com.vk.dwzkf.repository.QuestionRepository;
 
 import javax.faces.bean.ManagedBean;
@@ -13,7 +14,7 @@ import java.util.Map;
 @ManagedBean
 @SessionScoped
 public class QuestionManager {
-    private QuestionRepository questionRepo = new InMemQuestionRepository();
+    private QuestionRepository questionRepo = new PostgresQuestionRepository();
 
     public QuestionManager(){
 

@@ -4,6 +4,7 @@ import com.vk.dwzkf.model.Answer;
 import com.vk.dwzkf.model.Question;
 import com.vk.dwzkf.repository.AnswerRepository;
 import com.vk.dwzkf.repository.InMemoryAnswerRepository;
+import com.vk.dwzkf.repository.PostgresAnswerRepository;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -14,7 +15,7 @@ import java.util.Map;
 @ManagedBean
 @SessionScoped
 public class AnswerManager {
-    private AnswerRepository answerRepo = new InMemoryAnswerRepository();
+    private AnswerRepository answerRepo = new PostgresAnswerRepository();
 
     public List<Answer> getAll(int parentId) {
         return answerRepo.getAll(parentId);
