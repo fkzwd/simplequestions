@@ -6,11 +6,11 @@ import java.sql.DriverManager;
 public class DBConnection {
     private static Connection instance = null;
     private static String driver = "jdbc:postgresql://";
-    private static String host = "localhost";
+    private static String host = "ec2-54-75-246-118.eu-west-1.compute.amazonaws.com";
     private static String port = "5432";
-    private static String database = "example";
-    private static String user = "postgres";
-    private static String password = "postgres";
+    private static String database = "df5qtpb2u1ssca";
+    private static String user = "mcucbujpdtehpv";
+    private static String password = "02107ce51b2a642a18ccbd27e3516b6a80ceab668b2af0f451c64ef26c565a13";
     private DBConnection() {
 
     }
