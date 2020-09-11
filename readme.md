@@ -1,14 +1,17 @@
 # simplequestion
 <br/>
-All questions<br/>
-![AllQuestions](ihttps://github.com/fkzwd/simplequestions/blob/master/images/img1.png)
-<br/>
-Add new question<br/>
+All questions
+
+![](https://github.com/fkzwd/simplequestions/blob/master/images/img1.png)
+
+Add new question
+
 ![](https://github.com/fkzwd/simplequestions/blob/master/images/img2.png)
-<br/>
-Checkout question<br/>
+
+Checkout question
+
 ![](https://github.com/fkzwd/simplequestions/blob/master/images/img3.png)
-<br/>
+
 Add answer to question
-<br/>
+
 ![](https://github.com/fkzwd/simplequestions/blob/master/images/img4.png)
